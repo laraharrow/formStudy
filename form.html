@@ -107,6 +107,49 @@
           <input type="submit" value="Submit">
         </section>
       </form>
+      <div>
+        <h3>2. VALIDATION</h3>
+        <p>
+          To make sure your input gets filled by user use the attribute <strong>required</strong>
+          <br/>
+          This will give an alert if the user tries to submit the form without a value here.
+        </p>
+        <form action="/example.html" method="POST">
+          <label for="allergies">Do you have any dietary restrictions?</label>
+          <br>
+          <input id="allergies" name="allergies" type="text" required>
+          <br>
+          <input type="submit" value="Submit">
+        </form>
+
+        <p>
+          Another built-in validation we can use is to assign a minimum or maximum value for a number field, e.g. <strong>input type="number"</strong> and <strong>input type="range"</strong>. To set a minimum acceptable value, we use the min attribute and assign a value. On the flip side, to set a maximum acceptable value, we assign the max attribute a value.
+          <br/>
+          To set a minimum number of characters for a text field, we add the minlength attribute and a value to set a minimum value. Similarly, to set the maximum number of characters for a text field, we use the maxlength attribute and set a maximum value.
+        </p>
+        <form action="/example.html" method="POST">
+          <label for="guests">Enter # of guests:</label>
+          <input id="guests" name="guests" type="number" min="1" max="4">
+          <input type="submit" value="Submit">
+        </form>
+
+        <p>
+          In addition to checking the length of a text, we could also add a validation to check how the text was provided. For cases when we want user input to follow specific guidelines, we use the pattern attribute and assign it a regular expression, or regex. Regular expressions are a sequence of characters that make up a search pattern. If the input matches the regex, the form can be submitted.
+          <br/>
+          Let's say we wanted to check for a valid credit card number (a 14 to 16 digit number). We could use the regex: [0-9]{14,16} which checks that the user provided only numbers and that they entered at least 14 digits and at most 16 digits. To add this to a form:
+        </p>
+
+        <form action="/example.html" method="POST">
+          <label for="payment">Credit Card Number (no spaces):</label>
+          <br>
+          <input id="payment" name="payment" type="text" required pattern="[0-9]{14,16}">
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+
+
+
+
     </section>
   </body>
 </html>
